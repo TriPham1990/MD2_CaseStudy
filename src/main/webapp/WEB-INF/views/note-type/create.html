@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<form th:action="@{/create-description}" method="post" th:object="${noteType}">
+    <h1>Add New Description</h1>
+    <p>
+        <a th:href="@{/descriptions}">Back To NoteType List</a>
+    </p>
+    <input type="hidden" th:field="*{id}"/>
+    <p>Description</p>
+    <input type="text" th:field="*{description}"/><br>
+    <a th:href="@{/create-description}">Cancel</a>
+    <button type="submit">Save</button>
+</form>
+
+
+</body>
+</html>

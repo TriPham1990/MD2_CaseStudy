@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/edit-description}" method="post" th:object="${noteType}">
+    <h1>Update Note Type</h1>
+    <th:block th:if="${message}">
+        <p th:text="${message}"></p>
+    </th:block>
+    <p>Description</p>
+    <input type="text" th:field="*{description}"/>
+    <button type="submit">Edit</button>
+    <a th:href="@{/descriptions}">Cancel</a>
+</form>
+</body>
+</html>
